@@ -6,4 +6,4 @@ function decrypt(data) {
   return "decrypted data";
 }
 
-export { read };
+module.exports = { read };
