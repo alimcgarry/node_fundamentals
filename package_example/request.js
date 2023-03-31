@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 axios
-  .get("https://www.google.com")
+  .get("https://wvb ww.google.com")
   .then((res) => {
     console.log(res);
   })
@@ -9,5 +9,5 @@ axios
     console.log(err);
   })
   .then(() => {
-    console.log("All done");
+    console.log("All done!!");
   });
