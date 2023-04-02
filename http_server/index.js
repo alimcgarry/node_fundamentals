@@ -28,6 +28,7 @@ server.on("request", (req, res) => {
       console.log("Request:", friend);
       friends.push(JSON.parse(friend));
     });
+    req.pipe(res);
   } else if (req.method === "GET" && items[1] === "friends") {
     if (items[1] === "friends") {
       res.statusCode = 200;
