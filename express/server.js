@@ -6,6 +6,9 @@ const messagesRouter = require("./routes/messages.router");
 
 const app = express();
 
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
+
 PORT = 3000;
 
 app.use((req, res, next) => {
@@ -15,9 +18,15 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.baseUrl}${req.url} ${delta}ms`);
 });
 
-app.use("/site", express.static(path.join(__dirname, "public")));
+app.use("/", express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.render("index", {
+    title: "This is the title",
+    caption: "This is the caption",
+  });
+});
 app.use("/friends", friendsRouter);
 app.use("/messages", messagesRouter);
 
