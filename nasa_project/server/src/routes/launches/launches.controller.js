@@ -1,7 +1,7 @@
-const { getAllPlanets, addNewLaunch } = require("../../models/planets.model");
+const { getAllLaunches, addNewLaunch } = require("../../models/launches.model");
 
-function httpGetAllPlanets(req, res) {
-  return res.status(200).json(getAllPlanets());
+function httpGetAllLaunches(req, res) {
+  res.status(200).json(getAllLaunches());
 }
 
 function httpAddNewLaunch(req, res) {
@@ -14,6 +14,6 @@ function httpAddNewLaunch(req, res) {
 }
 
 module.exports = {
-  httpGetAllPlanets,
+  httpGetAllLaunches,
   httpAddNewLaunch,
 };
